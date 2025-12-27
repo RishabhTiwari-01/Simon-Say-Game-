@@ -1,0 +1,161 @@
+/* body {
+    text-align: center;
+}
+.btn {
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    border: 2px solid black;
+    margin: 1rem;
+
+}
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+.yellow {
+    background-color: #F6767D;
+}
+.red {
+    background-color: #5050E7;
+}
+.purple {
+    background-color: #FFB835;
+}
+.green {
+    background-color: #9C4EE6;
+}
+.flash {
+    background-color: white;
+}
+.userflash {
+    background-color: green;
+} */
+
+
+
+
+
+
+
+/* Body ko dark aur attractive gradient background do */
+body {
+    text-align: center;
+    background: radial-gradient(circle, #1a1a2e, #16213e);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* h1 {
+    font-size: 3rem;
+    text-shadow: 0 0 10px #00d4ff;
+    margin-bottom: 20px;
+} */
+
+
+
+
+
+h1 {
+    font-size: 3.5rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px #0fa,
+        0 0 82px #0fa,
+        0 0 92px #0fa;
+    animation: flicker 1.5s infinite alternate; /* Halka sa chamakne wala effect */
+}
+h2 {
+    color: red;
+}
+/* Flicker animation taaki light jalti-bhujti lage */
+@keyframes flicker {
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 42px #0fa, 0 0 82px #0fa;
+    }
+    20%, 24%, 55% {       
+        text-shadow: none;
+    }
+}
+
+/* Button Container ko properly arrange karo */
+.btn-container {
+    display: grid;
+    /* 2 columns aur 2 rows fix kar di */
+    grid-template-columns: repeat(2, 200px); 
+    grid-template-rows: repeat(2, 200px);
+    
+    /* Ye hai magic property! Gap badha kar dekho */
+    gap: 30px; 
+    
+    justify-content: center;
+    align-content: center;
+    margin: 50px auto; /* Upar niche se space */
+}
+
+/* Buttons ka size aur shape */
+.btn {
+    height: 100%; /* Grid cell ke hisaab se auto adjust hoga */
+    width: 100%;
+    border-radius: 20%; /* Jo aapne pehle rakha tha */
+    border: 8px solid #16213e; /* Dark border jo image mein dikh raha hai */
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+/* Colors with Neon Glow */
+.yellow {
+    background-color: #ffbe0b;
+    box-shadow: 0 0 15px #ffbe0b;
+}
+.red {
+    background-color: #ff0054;
+    box-shadow: 0 0 15px #ff0054;
+}
+.purple {
+    background-color: #0062ff;
+    box-shadow: 0 0 15px #0062ff;
+}
+.green {
+    background-color: #00ad43; /* Maine blue rakha hai modern look ke liye */
+    box-shadow: 0 0 15px #00ad43;
+}
+
+/* Hover Effect */
+.btn:hover {
+    transform: scale(1.05);
+    border-color: orangered;
+}
+
+/* Flash Effect (Jab game sequence dikhaye) */
+.flash {
+    background-color: white !important;
+    box-shadow: 0 0 50px white !important;
+    transform: scale(0.95);
+}
+
+/* User Flash Effect (Jab user click kare) */
+.userflash {
+    background-color: #00ff88 !important; /* Bright green flash */
+    box-shadow: 0 0 50px #00ff88 !important;
+    transform: scale(0.95);
+}
+
+/* Game Over Effect (Optional - add this class to body via JS when game ends) */
+.game-over {
+    background-color: red !important;
+}
+.btn:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
